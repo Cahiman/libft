@@ -5,12 +5,10 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: baiannon <baiannon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/13 19:14:07 by baiannon          #+#    #+#             */
-/*   Updated: 2023/09/14 16:04:06 by baiannon         ###   ########.fr       */
+/*   Created: 2023/11/07 15:07:41 by baiannon          #+#    #+#             */
+/*   Updated: 2023/11/10 11:51:15 by baiannon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int	ft_isdigit(int c)
 {

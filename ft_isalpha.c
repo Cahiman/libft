@@ -5,12 +5,10 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: baiannon <baiannon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/14 16:01:12 by baiannon          #+#    #+#             */
-/*   Updated: 2023/09/14 16:31:36 by baiannon         ###   ########.fr       */
+/*   Created: 2023/11/07 14:58:55 by baiannon          #+#    #+#             */
+/*   Updated: 2023/11/10 11:51:24 by baiannon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int	ft_isalpha(int c)
 {
@@ -18,4 +16,3 @@ int	ft_isalpha(int c)
 		return (1);
 	return (0);
 }
-

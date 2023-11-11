@@ -5,16 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: baiannon <baiannon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/14 16:32:52 by baiannon          #+#    #+#             */
-/*   Updated: 2023/09/14 16:34:36 by baiannon         ###   ########.fr       */
+/*   Created: 2023/11/07 15:13:09 by baiannon          #+#    #+#             */
+/*   Updated: 2023/11/10 11:51:20 by baiannon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
 int	ft_isascii(int c)
 {
-	if (c >= 0 && c >= 127)
+	if (c >= 0 && c <= 127)
 		return (1);
 	return (0);
 }

@@ -1,36 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: baiannon <baiannon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/08 15:23:58 by baiannon          #+#    #+#             */
-/*   Updated: 2023/11/10 11:42:58 by baiannon         ###   ########.fr       */
+/*   Created: 2023/11/10 14:23:57 by baiannon          #+#    #+#             */
+/*   Updated: 2023/11/10 14:46:54 by baiannon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include <stdio.h>
 
-void	ft_bzero(void *s, size_t n)
+char	*ft_strrchr(const char *s, int c)
 {
-		int	i;
-		char	*ss;
+	int	i;
 
-		ss = s;
-		i = 0;
-		while (i < n)
-		{
-			ss[i] = '\0';
-			i++;
-		}
+	i = 0;
+	while (s[i])
+		i++;
+	while (i >= 0)
+	{
+		if (s[i] == ((unsigned char) c))
+					return ((char *) &s[i]);
+		i--;
+	}
+	if (s[i] == ((unsigned char) c))
+		return ((char *) &s[i]);
+	return (NULL);
 }
 
+#include <string.h>
 #include <stdio.h>
 int	main()
 {
-	char s1[100]="Je test";
-	size_t n = 3;
-	ft_bzero(s1, n);
-	printf("%s", s1);
+	char str[]="test enzo le con";
+	int	c = '\0';
+	printf("%s\n", strrchr(str, c));
+	printf("%s\n", ft_strrchr(str, c));
 }
