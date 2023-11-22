@@ -5,42 +5,39 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: baiannon <baiannon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/14 22:24:21 by baiannon          #+#    #+#             */
-/*   Updated: 2023/09/24 20:53:52 by baiannon         ###   ########.fr       */
+/*   Created: 2023/11/13 16:06:48 by baiannon          #+#    #+#             */
+/*   Updated: 2023/11/16 14:38:50 by baiannon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stddef.h>
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	int	i;
-	char *str1;
-	char *str2;
+	unsigned char	*src1;
+	unsigned char	*src2;
+	size_t			i;
 
-	str1 = (char *)s1;
-	str2 = (char *)s2;
-
+	src1 = (unsigned char *)s1;
+	src2 = (unsigned char *)s2;
 	i = 0;
-	if (n == 0)
-		return (0);
-	while (i != n)
+	while (i < n)
 	{
-		if (str1[i] != str2[i])
-			return (str1[i] - str2[i]);
+		if (src1[i] != src2[i])
+			return (src1[i] - src2[i]);
 		i++;
 	}
-	return (str1[i] - str2[i]);
+	return (0);
 }
-/*
-#include <stdio.h>
-#include <string.h>
-int	main()
 
-	const char s1[]="testocc";
-	const char s2[]="testest";
-	size_t n = 5;
-
-	printf("%d\n", ft_memcmp(s1, s2, n));
-	printf("%d\n", memcmp(s1, s2, n));
-}*/
+// #include <string.h>
+// #include <stdio.h>
+// int	main()
+// {
+// 	char s1[]="test";
+// 	char s2[]="tast";
+// 	size_t n = 0;
+// 	printf("%d\n", memcmp(s1, s2, n));
+// 	printf("%d", ft_memcmp(s1, s2, n));
+// }

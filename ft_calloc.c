@@ -1,37 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: baiannon <baiannon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/13 12:05:46 by baiannon          #+#    #+#             */
-/*   Updated: 2023/11/16 16:28:28 by baiannon         ###   ########.fr       */
+/*   Created: 2023/11/16 16:35:18 by baiannon          #+#    #+#             */
+/*   Updated: 2023/11/17 12:03:49 by baiannon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
 #include "libft.h"
 
-char	*ft_strdup(const char *s)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	int		i;
-	char	*dest;
-	size_t	len;
+	size_t	i;
+	char	*t;
 
-	if (s == NULL)
-		return (NULL);
 	i = 0;
-	len = ft_strlen(s);
-	dest = malloc((len + 1) * sizeof(char));
-	if (dest == NULL)
+	if (nmemb == 0 || size == 0)
+		return (malloc(0));
+	if (nmemb * size < nmemb || nmemb * size < size)
 		return (NULL);
-	while (s[i])
+	t = malloc(nmemb * size);
+	if (t == 0)
+		return (NULL);
+	while (nmemb * size > i)
 	{
-		dest[i] = s[i];
+		t[i] = '\0';
 		i++;
 	}
-	dest[i] = '\0';
-	return (dest);
+	return (t);
 }

@@ -1,37 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: baiannon <baiannon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/13 12:05:46 by baiannon          #+#    #+#             */
-/*   Updated: 2023/11/16 16:28:28 by baiannon         ###   ########.fr       */
+/*   Created: 2023/11/14 16:52:50 by baiannon          #+#    #+#             */
+/*   Updated: 2023/11/16 14:52:28 by baiannon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include <stddef.h>
 #include "libft.h"
 
-char	*ft_strdup(const char *s)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	int		i;
-	char	*dest;
-	size_t	len;
+	size_t	i;
 
-	if (s == NULL)
-		return (NULL);
 	i = 0;
-	len = ft_strlen(s);
-	dest = malloc((len + 1) * sizeof(char));
-	if (dest == NULL)
-		return (NULL);
-	while (s[i])
+	if (size > 0)
 	{
-		dest[i] = s[i];
-		i++;
+		while (src[i] && i < (size - 1))
+		{
+			dst[i] = src[i];
+			i++;
+		}
+		dst[i] = '\0';
 	}
-	dest[i] = '\0';
-	return (dest);
+	while (src[i])
+		i++;
+	return (i);
 }

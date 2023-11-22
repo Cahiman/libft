@@ -6,11 +6,13 @@
 /*   By: baiannon <baiannon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 11:54:48 by baiannon          #+#    #+#             */
-/*   Updated: 2023/11/10 13:06:05 by baiannon         ###   ########.fr       */
+/*   Updated: 2023/11/16 14:01:52 by baiannon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_tolower(int c)
+#include "libft.h"
+
+int	ft_tolower(int c)
 {
 	if (c >= 65 && c <= 90)
 		c += 32;

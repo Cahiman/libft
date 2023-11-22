@@ -6,9 +6,11 @@
 /*   By: baiannon <baiannon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 15:15:56 by baiannon          #+#    #+#             */
-/*   Updated: 2023/11/10 11:51:42 by baiannon         ###   ########.fr       */
+/*   Updated: 2023/11/13 12:15:40 by baiannon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isprint(int c)
 {
