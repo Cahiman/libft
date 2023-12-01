@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: parallels <parallels@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/26 18:29:33 by parallels         #+#    #+#             */
-/*   Updated: 2023/11/28 20:29:31 by parallels        ###   ########.fr       */
+/*   Created: 2023/11/28 20:48:12 by parallels         #+#    #+#             */
+/*   Updated: 2023/11/28 22:17:50 by parallels        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list	*new;
+	t_list *new_lst;
+	t_list *new_element;
 	
-	new = malloc(sizeof(t_list));
-	if (!new)
+	if (!lst || !del || !f)
 		return (NULL);
-	new->next = NULL;
-	new->content = content;
-
-	return (new);
+	while (lst != NULL)
+	{
+		new_element = ft_lstnew();
+		lst = lst->next;
+	}
 }

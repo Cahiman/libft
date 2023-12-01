@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: parallels <parallels@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/26 18:29:33 by parallels         #+#    #+#             */
-/*   Updated: 2023/11/28 20:29:31 by parallels        ###   ########.fr       */
+/*   Created: 2023/11/28 20:56:06 by parallels         #+#    #+#             */
+/*   Updated: 2023/11/28 20:56:14 by parallels        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	t_list	*new;
-	
-	new = malloc(sizeof(t_list));
-	if (!new)
-		return (NULL);
-	new->next = NULL;
-	new->content = content;
+	t_list	*lst_tmp;
 
-	return (new);
+	while (*lst != NULL)
+	{
+		lst_tmp = (*lst)->next;
+		ft_lstdelone(*lst, del);
+		*lst = lst_tmp;
+	}
 }

@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: parallels <parallels@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/26 18:29:33 by parallels         #+#    #+#             */
-/*   Updated: 2023/11/28 20:29:31 by parallels        ###   ########.fr       */
+/*   Created: 2023/11/28 22:08:44 by parallels         #+#    #+#             */
+/*   Updated: 2023/11/28 22:08:45 by parallels        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+t_list	*ft_lstlast(t_list *lst)
 {
-	t_list	*new;
-	
-	new = malloc(sizeof(t_list));
-	if (!new)
+	if (!lst)
 		return (NULL);
-	new->next = NULL;
-	new->content = content;
-
-	return (new);
+	while (lst->next != NULL)
+		lst = lst->next;
+	return (lst);
 }
