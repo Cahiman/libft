@@ -6,7 +6,7 @@
 /*   By: baiannon <baiannon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 16:57:30 by baiannon          #+#    #+#             */
-/*   Updated: 2023/11/17 17:08:50 by baiannon         ###   ########.fr       */
+/*   Updated: 2023/12/01 18:25:26 by baiannon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	j = 0;
 	i = 0;
+	if (!s1 || !s2)
+		return (NULL);
 	str = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
 	if (!str)
 		return (str);

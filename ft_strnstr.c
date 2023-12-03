@@ -6,7 +6,7 @@
 /*   By: baiannon <baiannon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 17:12:06 by baiannon          #+#    #+#             */
-/*   Updated: 2023/11/16 16:03:01 by baiannon         ###   ########.fr       */
+/*   Updated: 2023/12/01 18:17:55 by baiannon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,12 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	int		j;
 	char	*str;
 
+	if (!big && len == 0)
+		return (NULL);
 	i = 0;
 	j = 0;
 	str = (char *)big;
-	if (little == NULL || *little == '\0')
+	if (*little == '\0')
 		return ((char *)big);
 	while (big[i] && i < len)
 	{

@@ -6,7 +6,7 @@
 /*   By: baiannon <baiannon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 12:09:45 by baiannon          #+#    #+#             */
-/*   Updated: 2023/11/17 17:10:31 by baiannon         ###   ########.fr       */
+/*   Updated: 2023/12/01 18:27:37 by baiannon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	ft_putstr_fd(char *s, int fd)
 	int	i;
 
 	i = 0;
+	if (!s || !fd)
+		return ;
 	while (s[i])
 	{
 		ft_putchar_fd(s[i], fd);

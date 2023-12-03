@@ -3,19 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: parallels <parallels@student.42.fr>        +#+  +:+       +#+        */
+/*   By: baiannon <baiannon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/26 18:11:30 by parallels         #+#    #+#             */
-/*   Updated: 2023/11/26 18:21:38 by parallels        ###   ########.fr       */
+/*   Created: 2023/11/27 14:29:22 by baiannon          #+#    #+#             */
+/*   Updated: 2023/12/01 15:57:59 by baiannon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
 	int	i;
 
 	if (f == NULL || s == NULL)
-		return;
+		return ;
 	i = 0;
 	while (s[i])
 	{

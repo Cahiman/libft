@@ -6,7 +6,7 @@
 /*   By: baiannon <baiannon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 18:12:02 by ketrevis          #+#    #+#             */
-/*   Updated: 2023/11/21 14:37:20 by baiannon         ###   ########.fr       */
+/*   Updated: 2023/12/01 18:38:20 by baiannon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,12 +50,16 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		i;
 	int		j;
 	int		k;
-	int size;
+	int		size;
 
+	if (!s1 || !set)
+		return (NULL);
 	size = get_size(s1, set) + 1;
 	if (size <= 0)
 		size = 1;
 	str = malloc(size * sizeof(char));
+	if (!str)
+		return (NULL);
 	i = ft_strlen(s1) - 1;
 	j = 0;
 	k = 0;
@@ -68,7 +72,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	str[k] = '\0';
 	return (str);
 }
-
-// int	main() {
-// 	printf("%s", ft_strtrim("tripouille   xxx", " x"));
-// }

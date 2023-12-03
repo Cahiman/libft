@@ -6,7 +6,7 @@
 /*   By: baiannon <baiannon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 12:48:51 by baiannon          #+#    #+#             */
-/*   Updated: 2023/11/17 17:10:12 by baiannon         ###   ########.fr       */
+/*   Updated: 2023/12/01 18:37:00 by baiannon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*str;
 
 	i = 0;
+	if (!s)
+		return (NULL);
 	if (start > ft_strlen(s))
 		start = ft_strlen(s);
 	if (len > (ft_strlen(s) - start))
